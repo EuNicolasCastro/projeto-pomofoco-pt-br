@@ -21,15 +21,25 @@
 #cabecalho h1{
    display: none;
 }
-main#bloco-principal{
+#bloco-principal{
+   display: flex;
    height: 90vh;
    background-color: blueviolet;
-   position: relative;
+   flex-direction: column;
+   justify-content:space-between
+}
+#conteudo{
+   display: flex;
+   flex-direction: row;
 }
 
+.ciclos{
+   display: flex;
+   flex-direction: column;
+}
 #rodape{
    display: flex;
    flex-direction: row;
    align-items: center;
-   background-color: rgba(209, 31, 31, 0.267);
+   background-color: rgba(255, 255, 255, 0.15);
 }
