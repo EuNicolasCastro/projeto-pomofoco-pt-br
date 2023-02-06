@@ -2,4 +2,26 @@
 
 .container{
    background-color: #FFE3E0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+#cabecalho{
+   display: flex;
+   flex-direction: row;
+   padding-left: 5%;
+   padding-right: 20%;
+   height: 10vh;
+   align-items: center;
+   justify-content: space-between;
+   background-color: blue;
+}
+
+#cabecalho h1{
+   display: none;
+}
+main#bloco-principal{
+   background-color: blueviolet;
+   flex: 1;
 }
