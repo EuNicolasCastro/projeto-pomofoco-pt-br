@@ -23,7 +23,7 @@
    height: 10vh;
    align-items: center;
    justify-content: space-between;
-   background-color: blue;
+   background-color: #F07167;
 }
 
 #cabecalho h1{
@@ -32,13 +32,14 @@
 #bloco-principal{
    display: flex;
    height: 90vh;
-   background-color: blueviolet;
+   background-color:#FED9B7;
    flex-direction: column;
    justify-content:space-between
 }
 #conteudo{
    display: flex;
    flex-direction: row;
+   align-items: center;
 }
 
 .ciclos{
@@ -49,5 +50,19 @@
    display: flex;
    flex-direction: row;
    align-items: center;
-   background-color: rgba(255, 255, 255, 0.15);
+   padding-left: 5%;
+   padding-right: 20%;
+   justify-content: space-between;
+}
+#rodape p{
+   background-color: #f0706765;
+   padding: 5px 10px;
+   border-radius: 15px;
+}
+
+#rodape #icones-midias-sociais{
+   background-color: #f0706765;
+   padding: 5px 10px 1px 10px;
+   border-radius: 15px;
+   align-items: center;
 }
