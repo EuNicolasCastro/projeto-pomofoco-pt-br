@@ -25,10 +25,17 @@
    align-items: center;
    justify-content: space-between;
    background-color: #F07167;
+   font-weight: 800;
+   font-size: 20pt;
+   color: #FDFCDC;
 }
 
 #cabecalho h1{
    display: none;
+}
+
+.botao-menu-principal{
+   background-color: none;
 }
 #bloco-principal{
    display: flex;
