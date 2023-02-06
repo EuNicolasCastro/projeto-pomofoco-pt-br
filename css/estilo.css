@@ -22,6 +22,17 @@
    display: none;
 }
 main#bloco-principal{
+   height: 100vh;
    background-color: blueviolet;
-   flex: 1;
+   position: relative;
+}
+
+#rodape{
+   display: flex;
+   position: relative;
+   height: 10vh;
+   z-index: 10;
+   flex-direction: row;
+   align-items: center;
+   background-color: rgba(209, 31, 31, 0.267);
 }
