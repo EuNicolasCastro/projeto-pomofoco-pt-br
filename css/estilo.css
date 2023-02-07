@@ -13,7 +13,7 @@
    margin: 0;
    display: flex;
    flex-direction: column;
-   font-family: 'Lexend';
+   font-family: 'Lexend', Arial, sans-serif;
 }
 
 #cabecalho{
@@ -64,11 +64,13 @@
    padding-left: 5%;
    padding-right: 20%;
    justify-content: space-between;
+   font-weight: 400;
 }
 #rodape p{
    background-color: #f0706765;
    padding: 5px 10px;
    border-radius: 15px;
+   color: white;
    font-size: 10pt;
 }
 
