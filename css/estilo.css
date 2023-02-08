@@ -43,15 +43,25 @@ nav#menu-principal{
 .botao-menu-principal{
    padding: 10px;
    height: 100%;
-   background: none;
+   background: transparent;
    color: #FDFCDC;
    text-transform: uppercase;
    border: none;
    margin-left: 10px;
    margin-right: 10px;
+   cursor: pointer;
+   transition: all .3s linear;
 }
 
+.botao-menu-principal a{
+   text-decoration: none;
+   color: #FDFCDC;
+}
 
+.botao-menu-principal a:hover{
+   color: #F07167;
+   background: #FDFCDC;
+}
 
 /* CSS DO MAIN BLOCO PRINCIPAL - ONDE SERÁ EXIBIDO O CONTEUDO */
 #bloco-principal{
