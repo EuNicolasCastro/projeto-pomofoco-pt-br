@@ -31,7 +31,9 @@
    font-size: 20pt;
    color: #FDFCDC;
 }
-
+#cabecalho .titulo{
+   text-decoration: none;
+}
 #cabecalho h1{
    display: none;
 }
