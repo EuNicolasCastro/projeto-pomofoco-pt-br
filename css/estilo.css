@@ -33,6 +33,7 @@
 }
 #cabecalho .titulo{
    text-decoration: none;
+   color: #FDFCDC;
 }
 #cabecalho h1{
    display: none;
