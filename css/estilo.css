@@ -73,7 +73,7 @@ nav#menu-principal{
 #conteudo{
    display: flex;
    flex-direction: row;
-   padding: 10px 30px ;
+   padding: 2% 5% ;
 }
 
 #botao-iniciar-pausar{
@@ -82,15 +82,18 @@ nav#menu-principal{
 }
 
 .pomodoro-container{
-   width:40%;
+   width:30%;
    background-color:#fdfcdcbe;
    border-radius: 30px;
+   display: flex;
+   flex-direction: column;
+   padding: 30px;
 }
 
 .ciclos{
    display: flex;
    flex-direction: column;
-   padding-top: 30px;
+   padding-top: 20px;
    width: 10%;
 }
 
@@ -103,13 +106,14 @@ nav#menu-principal{
    width: 50px;
    height: 50px;
    border-style:double;
-   border-color: #F07167;
-   border-radius: 7px;
+   border:none;
    color: #F07167;
+   background-color: #fdfcdcbe;
    font-size: 20px;
    font-weight: bold;
    text-align: center;
 }
+
 
 
 /* CSS DO RODAPÉ */
