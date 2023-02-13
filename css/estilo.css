@@ -80,6 +80,11 @@ nav#menu-principal{
    align-items: center;
 }
 
+#botao-iniciar-pausar{
+   background-color: #F07167;
+   cursor: pointer;
+}
+
 .ciclos{
    display: flex;
    flex-direction: column;
