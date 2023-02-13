@@ -77,7 +77,7 @@ nav#menu-principal{
 #conteudo{
    display: flex;
    flex-direction: row;
-   align-items: center;
+   padding: 10px 30px ;
 }
 
 #botao-iniciar-pausar{
@@ -85,9 +85,29 @@ nav#menu-principal{
    cursor: pointer;
 }
 
+.pomodoro-container{
+   width:40%;
+   background-color:#fdfcdcbe;
+   border-radius: 30px;
+}
+
 .ciclos{
    display: flex;
    flex-direction: column;
+   padding-top: 30px;
+   width: 10%;
+}
+
+.botao-ciclo{
+   width: 50px;
+   height: 50px;
+   border-style:double;
+   border-color: #F07167;
+   border-radius: 10px;
+   color: #F07167;
+   font-size: 20px;
+   font-weight: bold;
+   text-align: center;
 }
 
 

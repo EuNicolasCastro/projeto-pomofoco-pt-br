@@ -12,7 +12,8 @@ function comecarContador(duracao, display){
         display.textContent = minutos + ":" + segundos;
     
         if(--timer < 0){
-            timer = 'ACABOU';
+            timer = 0;
+            display.textContent = "ACABOU"
         }
         
         	},1000)
@@ -20,7 +21,7 @@ function comecarContador(duracao, display){
 
 
 window.onload = function(){
-    var duracao = 60;
+    var duracao = 10;
     var display = document.querySelector('#tempo');
 
     comecarContador(duracao, display);
