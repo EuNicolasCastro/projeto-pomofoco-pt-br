@@ -56,12 +56,8 @@ nav#menu-principal{
    transition: all .3s linear;
 }
 
-.botao-menu-principal a{
-   text-decoration: none;
-   color: #FDFCDC;
-}
 
-.botao-menu-principal a:hover{
+.botao-menu-principal:hover{
    color: #F07167;
    background: #FDFCDC;
 }
@@ -98,12 +94,17 @@ nav#menu-principal{
    width: 10%;
 }
 
+.ciclos p{
+   margin: 0;
+   color:#F07167;
+   font-size: 13px;
+}
 .botao-ciclo{
    width: 50px;
    height: 50px;
    border-style:double;
    border-color: #F07167;
-   border-radius: 10px;
+   border-radius: 7px;
    color: #F07167;
    font-size: 20px;
    font-weight: bold;
