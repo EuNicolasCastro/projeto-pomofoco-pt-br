@@ -78,10 +78,8 @@ nav#menu-principal{
    padding: 2% 5% ;
 } 
 
-#botao-iniciar-pausar{
-   background-color: #F07167;
-   cursor: pointer;
-}
+
+/* CSS DO BLOCO DO CRONOMETRO */
 
 .pomodoro-container{
    width:30%;
@@ -104,6 +102,36 @@ nav#menu-principal{
    margin: 50px 0px;
 }
 
+#botao-iniciar-pausar{
+   height: 15%;
+   border: none;
+   font-size: 1.5em;
+   text-transform: uppercase;
+   color: #FDFCDC;
+   letter-spacing: 1px;
+   font-family: 'Lexend',Arial, Helvetica, sans-serif;
+   background-color: #F07167;
+   cursor: pointer;
+}
+#botoes-avancar-zerar{
+   height: 10%;
+   margin-top: 2%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+}
+#botao-avancar, #botao-zerar{
+   height: 100%;
+   width: 40%;
+   border: none;
+
+   background-color: #FFE3E0;
+   cursor: pointer;
+}
+
+
+/* CSS DOS BOTÕES QUE MARCAM O CICLO */
 .ciclos{
    display: flex;
    flex-direction: column;
