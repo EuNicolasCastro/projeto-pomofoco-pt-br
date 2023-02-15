@@ -188,3 +188,11 @@ nav#menu-principal{
 #icones-midias-sociais a{
    margin-inline: 5px;
 }
+
+/* CSS DA PAGINA SOBRE.HTML*/
+
+#fundo-sobre{
+   height: 90vh;
+   background-color: white;
+   padding: 5%;
+}
