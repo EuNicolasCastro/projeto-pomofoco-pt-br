@@ -4,21 +4,19 @@ let botaoZerar = document.querySelector("#botao-zerar");
 let display = document.querySelector('#tempo');
 
 display.textContent = "25:00"
-let iniciou = false;
 botaoIniciarPausar.addEventListener("click", iniciarContador);
 botaoZerar.addEventListener("click", zerarContador);
 
 
 function iniciarContador(){
-    var duracao = 60*24 + 59;
-    iniciou=true;
+    var duracao = 60*(24) + 59;
     rodarContador(duracao, display);
 }
 
 function rodarContador(duracao, display){
 
     let timer = duracao, minutos, segundos;
-    while (iniciou) {
+    
         setInterval( function (){
             
                 minutos = parseInt(timer / 60, 10);
@@ -35,19 +33,13 @@ function rodarContador(duracao, display){
                 }   
             
                 },1000)
-        }
     }
 
 
 function pausarContador(timer){
-   display.textContent = timer;
+  
 }
 
 function zerarContador(){
-    iniciou = false;
-    display.textContent = "25:00"
-}
 
-function checarIniciou(){
-    
 }
