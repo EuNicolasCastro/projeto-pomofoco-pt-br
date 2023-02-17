@@ -6,8 +6,7 @@ let display = document.querySelector('#tempo');
 
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
-
-
+let pausado = true;
 
 botaoIniciarPausar.addEventListener('click', iniciarContador);
 botaoZerar.addEventListener('click', zerarContador);
@@ -19,7 +18,14 @@ timer = 60*tempoEstudo;
 display.textContent = tempoEstudo+":00";
 
 function iniciarContador(){
+    if (pausado === false) {
+        clearInterval(intervalo);
+        pausado = true;
+    }
+    else{
+    pausado = false;
     intervalo = setInterval(rodarContador,1000);
+    }
 }
 
 function rodarContador(){
@@ -43,6 +49,7 @@ function pausarContador(){
 
 function zerarContador(){
     clearInterval(intervalo);
+    timer = 60*tempoEstudo;
     display.textContent = tempoEstudo+":00";
 }
 
