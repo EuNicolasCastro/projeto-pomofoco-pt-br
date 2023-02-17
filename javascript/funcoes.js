@@ -1,30 +1,49 @@
 
 let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
-let botaoPausar = document.querySelector('#botao-avancar')
+let botaoPausar = document.querySelector('#botao-avancar');
 let display = document.querySelector('#tempo');
 
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
-let pausado = true;
+let checarEstudo,checarIntervaloCurto ,checarIntervaloLongo;
+let tempoPausado = true;
 
-botaoIniciarPausar.addEventListener('click', iniciarContador);
+botaoIniciarPausar.addEventListener('click', iniciarEstudo);
 botaoZerar.addEventListener('click', zerarContador);
 botaoPausar.addEventListener('click', avancarContador)
 
-tempoEstudo = 25;
-timer = 60*tempoEstudo;
+tempoEstudo = 10;
+tempoIntervaloCurto = 5;
+checarEstudo = true;
+checarIntervaloCurto = false;
+checarIntervaloLongo = false;
 
 display.textContent = tempoEstudo+":00";
 
+function iniciarEstudo(){
+    if(checarEstudo === true && checarIntervaloCurto === false && checarIntervaloLongo === false){
+        checarEstudo = false;
+        checarIntervaloCurto = true;
+        timer = 60*tempoEstudo;
+        iniciarContador();
+    } else {
+        checarEstudo = true;
+        checarIntervaloCurto = false;
+        timer = 60*tempoIntervaloCurto;
+        iniciarContador();
+    }
+}
+
 function iniciarContador(){
-    if (pausado === false) {
+    if (tempoPausado === false) {
         clearInterval(intervalo);
-        pausado = true;
+        tempoPausado = true;
     }
     else{
-    pausado = false;
-    intervalo = setInterval(rodarContador,1000);
+    rodarContador();
+    tempoPausado = false;
+    intervalo = setInterval(rodarContador,10);
     }
 }
 
@@ -40,11 +59,16 @@ function rodarContador(){
 
     if(--timer < 0){
         timer = 0;
-        display.textContent = "ACABOU" // Aqui será para chamar a proxima funcao de intervalo
+        iniciarEstudo();
+        //display.textContent = "ACABOU" // Aqui será para chamar a proxima funcao de intervalo
+        
     }
 }
 
-function pausarContador(){
+function iniciarIntervaloCurto(){
+    timer = 60*tempoIntervaloCurto;
+    tempoPausado = true;
+    iniciarContador();
 }
 
 function zerarContador(){
