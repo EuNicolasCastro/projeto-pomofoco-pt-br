@@ -8,7 +8,7 @@ let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
 let checarEstudo;
 let tempoPausado = true;
-let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
+let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 0;
 
 botaoIniciarPausar.addEventListener('click', iniciarEstudo);
 botaoZerar.addEventListener('click', zerarContador);
@@ -16,21 +16,28 @@ botaoPausar.addEventListener('click', avancarContador)
 
 tempoEstudo = 10;
 tempoIntervaloCurto = 5;
+tempoIntervaloLongo = 20;
 checarEstudo = true;
 
 display.textContent = tempoEstudo+":00";
 
 function iniciarEstudo(){
-    cicloAtualdeEstudo++;
-    if(checarEstudo === true){
-        checarEstudo = false;
-        timer = 60*tempoEstudo;
+    if (cicloAtualdeEstudo === cicloTotaldeEstudo) {
+        timer = 60*tempoIntervaloLongo;
         iniciarContador();
-    } else {
-        checarEstudo = true;
-        timer = 60*tempoIntervaloCurto;
-        iniciarContador();
-    }
+        cicloAtualdeEstudo = 0;
+    } else{
+        cicloAtualdeEstudo++;
+        if(checarEstudo === true){
+            checarEstudo = false;
+            timer = 60*tempoEstudo;
+            iniciarContador();
+        } else {
+            checarEstudo = true;
+            timer = 60*tempoIntervaloCurto;
+            iniciarContador();
+        }
+    }   
 }
 
 function iniciarContador(){
