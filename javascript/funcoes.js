@@ -3,6 +3,7 @@ let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
 let botaoPausar = document.querySelector('#botao-avancar');
 let display = document.querySelector('#tempo');
+let botaoCicloAtual = document.querySelector('botao-ciclo1');
 
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
@@ -20,6 +21,7 @@ tempoIntervaloLongo = 20;
 checarEstudo = true;
 
 display.textContent = tempoEstudo+":00";
+botaoCicloAtual.classList.add('.botao-ciclo-atual')
 
 function iniciarEstudo(){
     if (cicloAtualdeEstudo === cicloTotaldeEstudo) {
