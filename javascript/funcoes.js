@@ -21,7 +21,7 @@ tempoIntervaloLongo = 20;
 checarEstudo = true;
 
 display.textContent = tempoEstudo+":00";
-botaoCicloAtual.classList.add('.botao-ciclo-atual')
+botaoCicloAtual.classList.add('botao-ciclo-atual')
 
 function iniciarEstudo(){
     if (cicloAtualdeEstudo === cicloTotaldeEstudo) {
