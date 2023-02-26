@@ -3,7 +3,7 @@ let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
 let botaoPausar = document.querySelector('#botao-avancar');
 let display = document.querySelector('#tempo');
-let botaoCicloAtual = document.querySelector('botao-ciclo1');
+let botaoCicloAtual = document.querySelector('#botao-ciclo1');
 
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
