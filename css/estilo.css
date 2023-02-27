@@ -199,6 +199,8 @@ nav#menu-principal{
 
 #fundo-sobre{
    height: 90vh;
-   background-color: white;
+   background-image: url('../images/tomate-fundo-1000.jpg');
+   background-repeat: no-repeat;
    padding: 5%;
 }
+
