@@ -9,27 +9,25 @@ let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
 let checarEstudo;
 let tempoPausado = true;
-let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 0;
+let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
 
 botaoIniciarPausar.addEventListener('click', iniciarEstudo);
 botaoZerar.addEventListener('click', zerarContador);
 botaoPausar.addEventListener('click', avancarContador)
 
-tempoEstudo = 10;
+tempoEstudo = 20;
 tempoIntervaloCurto = 5;
 tempoIntervaloLongo = 20;
 checarEstudo = true;
 
-display.textContent = tempoEstudo+":00";
+display.textContent = tempoIntervaloLongo+":00";
 botaoCicloAtual.classList.add('botao-ciclo-atual')
 
 function iniciarEstudo(){
     if (cicloAtualdeEstudo === cicloTotaldeEstudo) {
         timer = 60*tempoIntervaloLongo;
         iniciarContador();
-        cicloAtualdeEstudo = 0;
-    } else{
-        cicloAtualdeEstudo++;
+    } else{ 
         if(checarEstudo === true){
             checarEstudo = false;
             timer = 60*tempoEstudo;
@@ -67,7 +65,7 @@ function rodarContador(){
     if(--timer < 0){
         timer = 0;
         iniciarEstudo();
-        //display.textContent = "ACABOU" // Aqui será para chamar a proxima funcao de intervalo
+        display.textContent = "ACABOU" // Aqui será para chamar a proxima funcao de intervalo
         
     }
 }
@@ -81,9 +79,12 @@ function iniciarIntervaloCurto(){
 function zerarContador(){
     clearInterval(intervalo);
     timer = 60*tempoEstudo;
+    cicloAtualdeEstudo = 1;
     display.textContent = tempoEstudo+":00";
 }
 
 function avancarContador(){
     clearInterval(intervalo);
+    cicloAtualdeEstudo +=1;
+    alert(cicloAtualdeEstudo)
 }
