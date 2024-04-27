@@ -16,8 +16,8 @@ botaoZerar.addEventListener('click', zerarContador);
 botaoPausar.addEventListener('click', avancarContador)
 
 // SETANDO O TEMPO
-tempoIntervaloCurto = 1;
-tempoIntervaloLongo = 2;
+tempoIntervaloCurto = 5;
+tempoIntervaloLongo = 20;
 tempoEstudo = tempoIntervaloLongo;
 
 
@@ -55,7 +55,7 @@ function iniciarPausarContador(){
     }
     else{
     tempoPausado = false;
-    intervalo = setInterval(rodarContador,20);
+    intervalo = setInterval(rodarContador,1000);
     }
 }
 
