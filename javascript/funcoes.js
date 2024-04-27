@@ -22,7 +22,14 @@ tempoEstudo = tempoIntervaloLongo;
 
 
 checarIntervalor=false;
-display.textContent = tempoIntervaloLongo+":00";
+
+tempoIntervaloLongo = tempoIntervaloLongo <10 ? "0"+ tempoIntervaloLongo : tempoIntervaloLongo;
+tempoIntervaloCurto = tempoIntervaloCurto <10 ? "0"+ tempoIntervaloCurto : tempoIntervaloCurto;
+
+
+//Inciando o display do contador
+tempoEstudo = tempoIntervaloLongo
+display.textContent = tempoEstudo+":00";
 botaoCicloAtual.classList.add('botao-ciclo-atual')
 
 timer = 60*tempoEstudo;
@@ -78,7 +85,7 @@ function zerarContador(){
     clearInterval(intervalo);
     timer = 60*tempoEstudo;
     tempoPausado = true;
-    display.textContent = tempoEstudo+":00";
+    display.textContent = tempoEstudo + ":00";
 }
 
 function avancarContador(){
