@@ -16,17 +16,17 @@ botaoZerar.addEventListener('click', zerarContador);
 botaoPausar.addEventListener('click', avancarContador)
 
 // SETANDO O TEMPO
-tempoIntervaloCurto = 4;
-tempoIntervaloLongo = 6;
+tempoIntervaloCurto = 1;
+tempoIntervaloLongo = 2;
 tempoEstudo = tempoIntervaloLongo;
 
 
-checarIntervalor=false;
+checarIntervalo=false;
 
 tempoIntervaloLongo = tempoIntervaloLongo <10 ? "0"+ tempoIntervaloLongo : tempoIntervaloLongo;
 tempoIntervaloCurto = tempoIntervaloCurto <10 ? "0"+ tempoIntervaloCurto : tempoIntervaloCurto;
 
-
+ 
 //Inciando o display do contador
 tempoEstudo = tempoIntervaloLongo
 display.textContent = tempoEstudo+":00";
@@ -55,7 +55,7 @@ function iniciarPausarContador(){
     }
     else{
     tempoPausado = false;
-    intervalo = setInterval(rodarContador,10);
+    intervalo = setInterval(rodarContador,20);
     }
 }
 
@@ -68,12 +68,29 @@ function rodarContador(){
     segundos = segundos <10 ? "0"+ segundos : segundos;
 
     display.textContent = minutos + ":" + segundos;
-
     if(--timer < 0){
-        timer = 0;        
-        display.textContent = tempoIntervaloCurto+":00"; // Aqui será para chamar a proxima funcao de intervalo 
+        timer = 0; 
+        trocarTempo();
     }
+
 }
+
+function trocarTempo(){
+    
+        
+        if(!checarIntervalo){
+            tempoEstudo = tempoIntervaloCurto;
+            checarIntervalo = true;          
+        }else{
+            tempoEstudo = tempoIntervaloLongo;
+            checarIntervalo = false;
+        }
+        timer = 60*tempoEstudo;
+        zerarContador();
+        iniciarPausarContador();
+       // display.textContent = tempoIntervaloCurto+":00";  // Aqui será para chamar a proxima funcao de intervalo 
+}
+
 
 function iniciarIntervaloCurto(){
     timer = 60*tempoIntervaloCurto;
