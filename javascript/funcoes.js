@@ -1,4 +1,4 @@
-import alterarCSSCiclo from "./alterarcss.js";
+//import alterarCSSCiclo from "./alterarcss.js";
 
 
 let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');

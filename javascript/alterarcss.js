@@ -1,3 +1,3 @@
-export default function alterarCSSCiclo(){
+export function alterarCSSCiclo(){
     alert('oi');
 }
