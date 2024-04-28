@@ -125,7 +125,7 @@ function avancarContador(){
 }
 
 function zerarTudo(){
-    botaoCiclo[cicloTotaldeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
+    botaoCiclo[cicloAtualdeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
     cicloAtualdeEstudo = 1;
     tempoEstudo = tempoIntervaloLongo; 
     zerarContador(); 
