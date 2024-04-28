@@ -7,6 +7,8 @@ let botaoPausar = document.querySelector('#botao-avancar');
 let display = document.querySelector('#tempo');
 let botaoCicloAtual = document.querySelector('#botao-ciclo1');
 
+
+
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
 let checarEstudo;

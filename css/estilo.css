@@ -132,7 +132,7 @@ nav#menu-principal{
    border: none;
    border-radius: 7px;
    font-family: 'Lexend',Arial, Helvetica, sans-serif;
-   font-size: 1.5em;
+   font-size: 1em;
    color: #F07167;
    text-transform: uppercase;
    background-color: #FFE3E0;
@@ -154,7 +154,7 @@ nav#menu-principal{
    font-size: 13px;
 }
 
-#botao-ciclo1,.botao-ciclo2,.botao-ciclo3,.botao-ciclo4{
+.botao-ciclo{
    width: 50px;
    height: 50px;
    border-style:double;
