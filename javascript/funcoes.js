@@ -12,12 +12,12 @@ let tempoPausado = true;
 let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
 
 botaoIniciarPausar.addEventListener('click', iniciarPausarContador);
-botaoZerar.addEventListener('click', zerarContador);
+botaoZerar.addEventListener('click', zerarTudo);
 botaoPausar.addEventListener('click', avancarContador)
 
 // SETANDO O TEMPO
-tempoIntervaloCurto = 5;
-tempoIntervaloLongo = 20;
+tempoIntervaloCurto = 3;
+tempoIntervaloLongo = 5;
 tempoEstudo = tempoIntervaloLongo;
 
 
@@ -33,19 +33,7 @@ display.textContent = tempoEstudo+":00";
 botaoCicloAtual.classList.add('botao-ciclo-atual')
 
 timer = 60*tempoEstudo;
-/* function iniciarEstudo(){ 
 
-        if(tempo === true){
-            checarEstudo = false;
-            timer = 60*tempoEstudo;
-            iniciarContador();
-        } else {
-            checarEstudo = true;
-            timer = 60*tempoIntervaloCurto;
-            iniciarContador();
-        }
-      
-} */
 
 function iniciarPausarContador(){
     
@@ -55,8 +43,9 @@ function iniciarPausarContador(){
     }
     else{
     tempoPausado = false;
-    intervalo = setInterval(rodarContador,1000);
+    intervalo = setInterval(rodarContador,10);  // COlocando o contador rapido para testes
     }
+
 }
 
 function rodarContador(){
@@ -77,37 +66,46 @@ function rodarContador(){
 
 function trocarTempo(){
     
-        
         if(!checarIntervalo){
             tempoEstudo = tempoIntervaloCurto;
             checarIntervalo = true;          
         }else{
             tempoEstudo = tempoIntervaloLongo;
             checarIntervalo = false;
+            cicloAtualdeEstudo += 1;
         }
         timer = 60*tempoEstudo;
         zerarContador();
         iniciarPausarContador();
-       // display.textContent = tempoIntervaloCurto+":00";  // Aqui será para chamar a proxima funcao de intervalo 
-}
 
-
-function iniciarIntervaloCurto(){
-    timer = 60*tempoIntervaloCurto;
-    tempoPausado = true;
-    iniciarPausarContador();
 }
 
 function zerarContador(){
+
     clearInterval(intervalo);
     timer = 60*tempoEstudo;
     tempoPausado = true;
     display.textContent = tempoEstudo + ":00";
+
 }
 
 function avancarContador(){
+    
     clearInterval(intervalo);
     cicloAtualdeEstudo +=1;
-    alert(cicloAtualdeEstudo)
+    tempoEstudo = tempoIntervaloLongo;
+    alterarCSSCiclo();
     zerarContador();
+
+}
+
+function zerarTudo(){
+
+    tempoEstudo = tempoIntervaloLongo;
+    zerarContador();
+
+}
+
+function alterarCSSCiclo(){
+    alert('Está no ciclo nº: ' + cicloAtualdeEstudo)
 }
