@@ -81,7 +81,7 @@ function trocarTempo(){
         if(!checarIntervalo){
             tempoEstudo = tempoIntervaloCurto;
             checarIntervalo = true;  
-            fundoPrincipal.setAttribute('id','botao-principal-intervalo');        
+          //  fundoPrincipal.setAttribute('id','botao-principal-intervalo');    colocar o css aqui??    
         }else{
             tempoEstudo = tempoIntervaloLongo;
             checarIntervalo = false;
