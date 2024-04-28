@@ -4,7 +4,8 @@ let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
 let botaoPausar = document.querySelector('#botao-avancar');
 let display = document.querySelector('#tempo');
-let botaoCiclo = document.querySelectorAll('.botao-ciclo')
+let botaoCiclo = document.querySelectorAll('.botao-ciclo');
+let fundoPrincipal = document.querySelector('.bloco-principal');
 
 
 
@@ -38,7 +39,7 @@ display.textContent = tempoEstudo+":00";
 timer = 60*tempoEstudo;
 }
 //Iniciando o CSS dos ciclos
-botaoCiclo[0].setAttribute('id', 'botao-ciclo-atual');
+
 
 //Inciando funcoes
 
@@ -47,6 +48,7 @@ iniciarDisplayContador();
 
 function iniciarPausarContador(){
     
+    alterarCSSCicloAtual();
     if (tempoPausado === false) {
         clearInterval(intervalo);
         tempoPausado = true;
@@ -78,7 +80,8 @@ function trocarTempo(){
     
         if(!checarIntervalo){
             tempoEstudo = tempoIntervaloCurto;
-            checarIntervalo = true;          
+            checarIntervalo = true;  
+            fundoPrincipal.setAttribute('id','botao-principal-intervalo');        
         }else{
             tempoEstudo = tempoIntervaloLongo;
             checarIntervalo = false;
@@ -122,7 +125,18 @@ function avancarContador(){
 }
 
 function zerarTudo(){
+    botaoCiclo[cicloTotaldeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
     cicloAtualdeEstudo = 1;
     tempoEstudo = tempoIntervaloLongo; 
     zerarContador(); 
+}
+
+// FUNCOES PARA O CSS
+
+function alterarCSSCicloAtual(){
+    botaoCiclo[cicloAtualdeEstudo-1].setAttribute('id', 'botao-ciclo-atual');
+    if (cicloAtualdeEstudo > 1){
+        botaoCiclo[cicloAtualdeEstudo-2].removeAttribute('id', 'botao-ciclo-atual');
+    }
+
 }

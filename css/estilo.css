@@ -66,13 +66,18 @@ nav#menu-principal{
 }
 
 /* CSS DO MAIN BLOCO PRINCIPAL - ONDE SERÁ EXIBIDO O CONTEUDO */
-#bloco-principal{
+.bloco-principal{
    display: flex;
    height: 90vh;
    background-color:#FFE3E0;
    flex-direction: column;
    justify-content:space-between;
 }
+
+#bloco-principal-intervalo{
+   background-color: #00AFB9;
+}
+
 #conteudo{
    display: flex;
    flex-direction: row;
