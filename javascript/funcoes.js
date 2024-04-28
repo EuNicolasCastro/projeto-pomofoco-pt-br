@@ -93,16 +93,21 @@ function trocarTempo(){
 function mudarCiclo(){
 
     cicloAtualdeEstudo +=1;
-    finalizarTarefa();
-    alert(cicloAtualdeEstudo);
-    
+
 }
 
 function zerarContador(){
 
     clearInterval(intervalo);
     timer = 60*tempoEstudo;
-    tempoPausado = true;
+    
+    if (cicloAtualdeEstudo > cicloTotaldeEstudo){
+        alert('PARABÉNS, VOCê FINALIZOU SUA TAREFA!');
+        zerarTudo();
+        tempoPausado = false;
+    }else{
+        tempoPausado = true;
+    }
     display.textContent = tempoEstudo + ":00";
     
 }
@@ -116,16 +121,8 @@ function avancarContador(){
 
 }
 
-function finalizarTarefa(){
-
-    if (cicloAtualdeEstudo > cicloTotaldeEstudo){
-        alert('PARABÉNS, VOCê FINALIZOU SUA TAREFA!');
-        zerarTudo();
-    }
-}
-
 function zerarTudo(){
     cicloAtualdeEstudo = 1;
-    tempoEstudo = tempoIntervaloLongo;  
+    tempoEstudo = tempoIntervaloLongo; 
     zerarContador(); 
 }
