@@ -1,3 +1,5 @@
+import alterarCSSCiclo from "./alterarcss.js";
+
 
 let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
@@ -106,6 +108,3 @@ function zerarTudo(){
 
 }
 
-function alterarCSSCiclo(){
-    alert('Está no ciclo nº: ' + cicloAtualdeEstudo)
-}
