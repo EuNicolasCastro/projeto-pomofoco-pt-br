@@ -167,7 +167,7 @@ nav#menu-principal{
    transition: all .3s linear;
 }
 
-.botao-ciclo-atual{
+#botao-ciclo-atual{
    background-color: #F07167 !important;
    color: #FDFCDC !important;
 }

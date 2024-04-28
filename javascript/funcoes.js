@@ -1,11 +1,10 @@
-//import alterarCSSCiclo from "./alterarcss.js";
 
 
 let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
 let botaoPausar = document.querySelector('#botao-avancar');
 let display = document.querySelector('#tempo');
-let botaoCicloAtual = document.querySelector('#botao-ciclo1');
+let botaoCiclo = document.querySelectorAll('.botao-ciclo')
 
 
 
@@ -32,11 +31,18 @@ tempoIntervaloCurto = tempoIntervaloCurto <10 ? "0"+ tempoIntervaloCurto : tempo
 
  
 //Inciando o display do contador
-tempoEstudo = tempoIntervaloLongo
-display.textContent = tempoEstudo+":00";
-botaoCicloAtual.classList.add('botao-ciclo-atual')
 
+function iniciarDisplayContador(){
+tempoEstudo = tempoIntervaloLongo;
+display.textContent = tempoEstudo+":00";
 timer = 60*tempoEstudo;
+}
+//Iniciando o CSS dos ciclos
+botaoCiclo[0].setAttribute('id', 'botao-ciclo-atual');
+
+//Inciando funcoes
+
+iniciarDisplayContador();
 
 
 function iniciarPausarContador(){
@@ -76,12 +82,20 @@ function trocarTempo(){
         }else{
             tempoEstudo = tempoIntervaloLongo;
             checarIntervalo = false;
-            cicloAtualdeEstudo += 1;
+            mudarCiclo();
         }
         timer = 60*tempoEstudo;
         zerarContador();
         iniciarPausarContador();
 
+}
+
+function mudarCiclo(){
+
+    cicloAtualdeEstudo +=1;
+    finalizarTarefa();
+    alert(cicloAtualdeEstudo);
+    
 }
 
 function zerarContador(){
@@ -90,23 +104,28 @@ function zerarContador(){
     timer = 60*tempoEstudo;
     tempoPausado = true;
     display.textContent = tempoEstudo + ":00";
-
+    
 }
 
 function avancarContador(){
     
     clearInterval(intervalo);
-    cicloAtualdeEstudo +=1;
+    mudarCiclo();
     tempoEstudo = tempoIntervaloLongo;
-    alterarCSSCiclo();
     zerarContador();
 
+}
+
+function finalizarTarefa(){
+
+    if (cicloAtualdeEstudo > cicloTotaldeEstudo){
+        alert('PARABÉNS, VOCê FINALIZOU SUA TAREFA!');
+        zerarTudo();
+    }
 }
 
 function zerarTudo(){
-
-    tempoEstudo = tempoIntervaloLongo;
-    zerarContador();
-
+    cicloAtualdeEstudo = 1;
+    tempoEstudo = tempoIntervaloLongo;  
+    zerarContador(); 
 }
-
