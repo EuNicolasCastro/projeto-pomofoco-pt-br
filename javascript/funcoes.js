@@ -116,7 +116,7 @@ function zerarContador(){
 }
 
 function avancarContador(){
-    
+    // ajeitar reinicio com avancar!!! 29-04-2024
     clearInterval(intervalo);
     mudarCiclo();
     tempoEstudo = tempoIntervaloLongo;
