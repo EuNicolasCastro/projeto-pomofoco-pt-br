@@ -105,9 +105,10 @@ function zerarContador(){
     timer = 60*tempoEstudo;
     
     if (cicloAtualdeEstudo > cicloTotaldeEstudo){
-        alert('PARABÉNS, VOCê FINALIZOU SUA TAREFA!');
+
         zerarTudo();
         tempoPausado = false;
+        iniciarPausarContador();
     }else{
         tempoPausado = true;
     }
