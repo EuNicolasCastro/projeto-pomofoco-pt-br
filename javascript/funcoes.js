@@ -120,12 +120,13 @@ function avancarContador(){
     clearInterval(intervalo);
     mudarCiclo();
     tempoEstudo = tempoIntervaloLongo;
+
     zerarContador();
 
 }
 
 function zerarTudo(){
-    botaoCiclo[cicloTotaldeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
+    zerarCSSCiclos();
     cicloAtualdeEstudo = 1;
     tempoEstudo = tempoIntervaloLongo; 
     zerarContador(); 
@@ -139,4 +140,10 @@ function alterarCSSCicloAtual(){
         botaoCiclo[cicloAtualdeEstudo-2].removeAttribute('id', 'botao-ciclo-atual');
     }
 
+}
+
+function zerarCSSCiclos(){
+    for (let i = 1; i <= cicloTotaldeEstudo; i++) {
+        botaoCiclo[i-1].removeAttribute('id');    
+    }
 }
