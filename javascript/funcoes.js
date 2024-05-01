@@ -81,7 +81,7 @@ function rodarContador(){
     display.textContent = minutos + ":" + segundos;
     if(--timer < 0){
         timer = 0; 
-        
+        trocarTempo();
     }
 
 }
@@ -99,10 +99,8 @@ function zerarTudo(){
 function avancarCiclo(){
 
     mudarCiclo();
-    
-    tempoEstudo = tempoPomodoro;
-    // apagarBotaoAvancar();
-    // zerarContador();
+    iniciarPomodoro();
+
 
 }
 
@@ -111,8 +109,10 @@ function mudarCiclo(){
 
     cicloAtualdeEstudo +=1;
     alert(cicloAtualdeEstudo);
-    iniciarPomodoro();
+
 }
+
+// Essa função troca entre o tempo do intervalo e tempo do 
 
 // function trocarTempo(){
     
