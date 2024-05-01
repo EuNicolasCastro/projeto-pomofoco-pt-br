@@ -11,7 +11,7 @@ let fundoPrincipal = document.querySelector('#bloco-principal');
 
 
 let timer,duracao, minutos, segundos,intervalo;
-let tempoEstudo,tempoIntervalo,tempoPomodoro;
+let tempoEstudo,tempoIntervalo,tempoPomodoro, tempoDescansoLongo;
 let checarEstudo;
 let tempoPausado = true;
 let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
@@ -23,20 +23,21 @@ botaoAvancar.addEventListener('click', avancarCiclo)
 // SETANDO O TEMPO
 tempoIntervalo = 3;
 tempoPomodoro = 5;
+tempoDescansoLongo = 10;
 tempoEstudo = tempoPomodoro;
 
 
-checarIntervalo=false;
 
 tempoPomodoro = tempoPomodoro <10 ? "0"+ tempoPomodoro : tempoPomodoro;
 tempoIntervalo = tempoIntervalo <10 ? "0"+ tempoIntervalo : tempoIntervalo;
-
+tempoDescansoLongo = tempoDescansoLongo <10 ? "0"+ tempoDescansoLongo : tempoDescansoLongo;
  
 //Inciando o display do contador
 
 function iniciarPomodoro(){
     clearInterval(intervalo)
     tempoPausado = true;
+    checarIntervalo = false;
     tempoEstudo = tempoPomodoro;
     display.textContent = tempoEstudo+":00";
     timer = 60*tempoEstudo;
@@ -45,6 +46,7 @@ function iniciarPomodoro(){
 function iniciarIntervalo(){
     clearInterval(intervalo)
     tempoPausado = true;
+    checarIntervalo = true;
     tempoEstudo = tempoIntervalo;
     display.textContent = tempoEstudo+":00";
     timer = 60*tempoEstudo;
@@ -114,24 +116,36 @@ function mudarCiclo(){
 
 // Essa função troca entre o tempo do intervalo e tempo do 
 
-// function trocarTempo(){
+function trocarTempo(){
+
+    clearInterval(intervalo);
     
-//         if(!checarIntervalo){
-//             tempoEstudo = tempoIntervalo;
-//             checarIntervalo = true;  
-//            // alterarCSSIntervalo();
-//         }else{
-//             tempoEstudo = tempoPomodoro;
-//             checarIntervalo = false;
-//            // aparecerCSSPrincipal();
-//             mudarCiclo();
-//         }
-//         timer = 60*tempoEstudo;
-//         zerarContador();
-//         iniciarPausarContador();
+    if(!checarIntervalo){
+        tempoEstudo = tempoIntervalo;
+        checarIntervalo = true;  
+        
 
-// }
+    }else{
+        tempoEstudo = tempoPomodoro;
+        checarIntervalo = false;
+        mudarCiclo();
+        verificarUltimoCiclo();
+    }
+    timer = 60*tempoEstudo;
+    tempoPausado = true;
+    iniciarPausarContador();
 
+}
+
+function verificarUltimoCiclo(){
+
+    if(cicloAtualdeEstudo == cicloTotaldeEstudo){
+        tempoEstudo = tempoDescansoLongo;
+        zerarTudo();
+        
+    }
+    
+}
 
 // function zerarContador(){
 
