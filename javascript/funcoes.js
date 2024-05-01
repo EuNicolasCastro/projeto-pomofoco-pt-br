@@ -126,7 +126,7 @@ function avancarContador(){
     
     clearInterval(intervalo);
     alterarCSSCicloAtual();
-    aparecerCSSPrincipal();
+    //aparecerCSSPrincipal();
     mudarCiclo();
     
     tempoEstudo = tempoIntervaloLongo;
