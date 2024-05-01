@@ -1,4 +1,4 @@
-//import teste from "./alterarcss.js"; >>>> VER COMO IMPORTAR FUNCAO DE OUTRO ARQUIVO JS
+
 
 let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
@@ -11,32 +11,41 @@ let fundoPrincipal = document.querySelector('#bloco-principal');
 
 
 let timer,duracao, minutos, segundos,intervalo;
-let tempoEstudo,tempoIntervaloCurto,tempoIntervaloLongo;
+let tempoEstudo,tempoIntervalo,tempoPomodoro;
 let checarEstudo;
 let tempoPausado = true;
 let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
 
 botaoIniciarPausar.addEventListener('click', iniciarPausarContador);
 botaoZerar.addEventListener('click', zerarTudo);
-botaoAvancar.addEventListener('click', avancarContador)
+botaoAvancar.addEventListener('click', avancarCiclo)
 
 // SETANDO O TEMPO
-tempoIntervaloCurto = 3;
-tempoIntervaloLongo = 5;
-tempoEstudo = tempoIntervaloLongo;
+tempoIntervalo = 3;
+tempoPomodoro = 5;
+tempoEstudo = tempoPomodoro;
 
 
 checarIntervalo=false;
 
-tempoIntervaloLongo = tempoIntervaloLongo <10 ? "0"+ tempoIntervaloLongo : tempoIntervaloLongo;
-tempoIntervaloCurto = tempoIntervaloCurto <10 ? "0"+ tempoIntervaloCurto : tempoIntervaloCurto;
+tempoPomodoro = tempoPomodoro <10 ? "0"+ tempoPomodoro : tempoPomodoro;
+tempoIntervalo = tempoIntervalo <10 ? "0"+ tempoIntervalo : tempoIntervalo;
 
  
 //Inciando o display do contador
 
-function iniciarDisplayContador(){
-    
-    tempoEstudo = tempoIntervaloLongo;
+function iniciarPomodoro(){
+    clearInterval(intervalo)
+    tempoPausado = true;
+    tempoEstudo = tempoPomodoro;
+    display.textContent = tempoEstudo+":00";
+    timer = 60*tempoEstudo;
+}
+
+function iniciarIntervalo(){
+    clearInterval(intervalo)
+    tempoPausado = true;
+    tempoEstudo = tempoIntervalo;
     display.textContent = tempoEstudo+":00";
     timer = 60*tempoEstudo;
 }
@@ -45,12 +54,11 @@ function iniciarDisplayContador(){
 
 //Inciando funcoes
 
-iniciarDisplayContador();
+ iniciarPomodoro();
 
 
 function iniciarPausarContador(){
     
-    alterarCSSCicloAtual();
     if (tempoPausado === false) {
         clearInterval(intervalo);
         tempoPausado = true;
@@ -73,111 +81,118 @@ function rodarContador(){
     display.textContent = minutos + ":" + segundos;
     if(--timer < 0){
         timer = 0; 
-        trocarTempo();
+        
     }
 
 }
 
-function trocarTempo(){
+// Função chamada ao apertar o Botão ZERAR
+
+function zerarTudo(){
+    //botaoCiclo[cicloTotaldeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
+    cicloAtualdeEstudo = 1;
+    iniciarPomodoro();
+}
+
+// Função chamada ao apertar o Botão AVANÇAR CICLO
+
+function avancarCiclo(){
+
+    mudarCiclo();
     
-        if(!checarIntervalo){
-            tempoEstudo = tempoIntervaloCurto;
-            checarIntervalo = true;  
-            alterarCSSIntervalo();
-        }else{
-            tempoEstudo = tempoIntervaloLongo;
-            checarIntervalo = false;
-            aparecerCSSPrincipal();
-            mudarCiclo();
-        }
-        timer = 60*tempoEstudo;
-        zerarContador();
-        iniciarPausarContador();
+    tempoEstudo = tempoPomodoro;
+    // apagarBotaoAvancar();
+    // zerarContador();
 
 }
+
 
 function mudarCiclo(){
 
     cicloAtualdeEstudo +=1;
-
+    alert(cicloAtualdeEstudo);
+    iniciarPomodoro();
 }
 
-function zerarContador(){
-
-    clearInterval(intervalo);
-    timer = 60*tempoEstudo;
+// function trocarTempo(){
     
-    apagarBotaoAvancar();
+//         if(!checarIntervalo){
+//             tempoEstudo = tempoIntervalo;
+//             checarIntervalo = true;  
+//            // alterarCSSIntervalo();
+//         }else{
+//             tempoEstudo = tempoPomodoro;
+//             checarIntervalo = false;
+//            // aparecerCSSPrincipal();
+//             mudarCiclo();
+//         }
+//         timer = 60*tempoEstudo;
+//         zerarContador();
+//         iniciarPausarContador();
 
-    if (cicloAtualdeEstudo > cicloTotaldeEstudo){
-        alert('Voce finalizou a tarefa!');
-        tempoPausado = false;
-        zerarTudo();
+// }
+
+
+// function zerarContador(){
+
+//     clearInterval(intervalo);
+//     timer = 60*tempoEstudo;
+    
+//     apagarBotaoAvancar();
+
+//     if (cicloAtualdeEstudo > cicloTotaldeEstudo){
+//         alert('Voce finalizou a tarefa!');
+//         tempoPausado = false;
+//         zerarTudo();
         
-        iniciarPausarContador();
-    }else{
-        tempoPausado = true;
-    }
-    display.textContent = tempoEstudo + ":00";
+//         iniciarPausarContador();
+//     }else{
+//         tempoPausado = true;
+//     }
+//     display.textContent = tempoEstudo + ":00";
     
-}
+// }
 
-function avancarContador(){
-    
-    clearInterval(intervalo);
-    alterarCSSCicloAtual();
-    //aparecerCSSPrincipal();
-    mudarCiclo();
-    
-    tempoEstudo = tempoIntervaloLongo;
-    apagarBotaoAvancar();
-    zerarContador();
 
-}
 
-function zerarTudo(){
-    botaoCiclo[cicloTotaldeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
-    cicloAtualdeEstudo = 1;
-    tempoEstudo = tempoIntervaloLongo; 
-    zerarContador(); 
-}
+
 
 // FUNCOES PARA O CSS
 
-function alterarCSSCicloAtual(){
+// function alterarCSSCicloAtual(){
 
-    botaoCiclo[cicloAtualdeEstudo-1].setAttribute('id', 'botao-ciclo-atual');
-    if (cicloAtualdeEstudo > 1){
-        botaoCiclo[cicloAtualdeEstudo-2].removeAttribute('id', 'botao-ciclo-atual');
-    }
+//     botaoCiclo[cicloAtualdeEstudo-1].setAttribute('id', 'botao-ciclo-atual');
+//     if (cicloAtualdeEstudo > 1){
+//         botaoCiclo[cicloAtualdeEstudo-2].removeAttribute('id', 'botao-ciclo-atual');
+//     }
 
-}
+// }
 
-function zerarCSSCiclos(){
+// function zerarCSSCiclos(){
 
-    for (let i = 1; i <= cicloTotaldeEstudo; i++) {
-        botaoCiclo[i-1].removeAttribute('id');    
-    }
-}
+//     for (let i = 1; i <= cicloTotaldeEstudo; i++) {
+//         botaoCiclo[i-1].removeAttribute('id');    
+//     }
+// }
 
-function apagarBotaoAvancar(){
-    if (cicloAtualdeEstudo == cicloTotaldeEstudo){
-        botaoAvancar.style.display = "none";
-        grupoBotoesAvancarZerar.style.flexDirection = "row-reverse";
-    }
-}
+// function apagarBotaoAvancar(){
+//     if (cicloAtualdeEstudo == cicloTotaldeEstudo){
+//         botaoAvancar.style.display = "none";
+//         grupoBotoesAvancarZerar.style.flexDirection = "row-reverse";
+//     }
+// }
 
-function aparecerBotaoAvancar(){
-    botaoAvancar.style.display = "block";
-    grupoBotoesAvancarZerar.style.flexDirection = "row";
-}
+// function aparecerBotaoAvancar(){
+//     botaoAvancar.style.display = "block";
+//     grupoBotoesAvancarZerar.style.flexDirection = "row";
+// }
 
 
-function alterarCSSIntervalo(){
-    fundoPrincipal.style.backgroundColor = "#00AFB9"; 
-    alert('Alterar fundo');
-}
+// function alterarCSSIntervalo(){
+//     fundoPrincipal.style.backgroundColor = "#00AFB9"; 
+//     alert('Alterar fundo');
+// }
 
-function aparecerCSSPrincipal(){
-    fundoPrincipal.style.backgroundColor = "#FFE3E0";
-}
+// function aparecerCSSPrincipal(){
+//     fundoPrincipal.style.backgroundColor = "#FFE3E0";
+// }
