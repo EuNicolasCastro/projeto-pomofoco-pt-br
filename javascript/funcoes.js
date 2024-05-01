@@ -1,11 +1,12 @@
-
+//import teste from "./alterarcss.js"; >>>> VER COMO IMPORTAR FUNCAO DE OUTRO ARQUIVO JS
 
 let botaoIniciarPausar = document.querySelector('#botao-iniciar-pausar');
 let botaoZerar = document.querySelector('#botao-zerar');
-let botaoPausar = document.querySelector('#botao-avancar');
+let botaoAvancar = document.querySelector('#botao-avancar');
+let grupoBotoesAvancarZerar = document.querySelector('#botoes-avancar-zerar');
 let display = document.querySelector('#tempo');
 let botaoCiclo = document.querySelectorAll('.botao-ciclo');
-let fundoPrincipal = document.querySelector('.bloco-principal');
+let fundoPrincipal = document.querySelector('#bloco-principal');
 
 
 
@@ -17,7 +18,7 @@ let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
 
 botaoIniciarPausar.addEventListener('click', iniciarPausarContador);
 botaoZerar.addEventListener('click', zerarTudo);
-botaoPausar.addEventListener('click', avancarContador)
+botaoAvancar.addEventListener('click', avancarContador)
 
 // SETANDO O TEMPO
 tempoIntervaloCurto = 3;
@@ -34,9 +35,10 @@ tempoIntervaloCurto = tempoIntervaloCurto <10 ? "0"+ tempoIntervaloCurto : tempo
 //Inciando o display do contador
 
 function iniciarDisplayContador(){
-tempoEstudo = tempoIntervaloLongo;
-display.textContent = tempoEstudo+":00";
-timer = 60*tempoEstudo;
+    
+    tempoEstudo = tempoIntervaloLongo;
+    display.textContent = tempoEstudo+":00";
+    timer = 60*tempoEstudo;
 }
 //Iniciando o CSS dos ciclos
 
@@ -55,7 +57,7 @@ function iniciarPausarContador(){
     }
     else{
     tempoPausado = false;
-    intervalo = setInterval(rodarContador,10);  // COlocando o contador rapido para testes
+    intervalo = setInterval(rodarContador,10);  // Colocando o contador rapido para testes
     }
 
 }
@@ -81,10 +83,11 @@ function trocarTempo(){
         if(!checarIntervalo){
             tempoEstudo = tempoIntervaloCurto;
             checarIntervalo = true;  
-          //  fundoPrincipal.setAttribute('id','botao-principal-intervalo');    colocar o css aqui??    
+            alterarCSSIntervalo();
         }else{
             tempoEstudo = tempoIntervaloLongo;
             checarIntervalo = false;
+            aparecerCSSPrincipal();
             mudarCiclo();
         }
         timer = 60*tempoEstudo;
@@ -104,10 +107,13 @@ function zerarContador(){
     clearInterval(intervalo);
     timer = 60*tempoEstudo;
     
-    if (cicloAtualdeEstudo > cicloTotaldeEstudo){
+    apagarBotaoAvancar();
 
-        zerarTudo();
+    if (cicloAtualdeEstudo > cicloTotaldeEstudo){
+        alert('Voce finalizou a tarefa!');
         tempoPausado = false;
+        zerarTudo();
+        
         iniciarPausarContador();
     }else{
         tempoPausado = true;
@@ -117,16 +123,20 @@ function zerarContador(){
 }
 
 function avancarContador(){
-    // ajeitar reinicio com avancar!!! 29-04-2024
+    
     clearInterval(intervalo);
+    alterarCSSCicloAtual();
+    aparecerCSSPrincipal();
     mudarCiclo();
+    
     tempoEstudo = tempoIntervaloLongo;
-
+    apagarBotaoAvancar();
     zerarContador();
 
 }
 
 function zerarTudo(){
+    aparecerBotaoAvancar();
     zerarCSSCiclos();
     cicloAtualdeEstudo = 1;
     tempoEstudo = tempoIntervaloLongo; 
@@ -136,6 +146,7 @@ function zerarTudo(){
 // FUNCOES PARA O CSS
 
 function alterarCSSCicloAtual(){
+
     botaoCiclo[cicloAtualdeEstudo-1].setAttribute('id', 'botao-ciclo-atual');
     if (cicloAtualdeEstudo > 1){
         botaoCiclo[cicloAtualdeEstudo-2].removeAttribute('id', 'botao-ciclo-atual');
@@ -144,7 +155,30 @@ function alterarCSSCicloAtual(){
 }
 
 function zerarCSSCiclos(){
+
     for (let i = 1; i <= cicloTotaldeEstudo; i++) {
         botaoCiclo[i-1].removeAttribute('id');    
     }
+}
+
+function apagarBotaoAvancar(){
+    if (cicloAtualdeEstudo == cicloTotaldeEstudo){
+        botaoAvancar.style.display = "none";
+        grupoBotoesAvancarZerar.style.flexDirection = "row-reverse";
+    }
+}
+
+function aparecerBotaoAvancar(){
+    botaoAvancar.style.display = "block";
+    grupoBotoesAvancarZerar.style.flexDirection = "row";
+}
+
+
+function alterarCSSIntervalo(){
+    fundoPrincipal.style.backgroundColor = "#00AFB9"; 
+    alert('Alterar fundo');
+}
+
+function aparecerCSSPrincipal(){
+    fundoPrincipal.style.backgroundColor = "#FFE3E0";
 }

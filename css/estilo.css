@@ -74,9 +74,6 @@ nav#menu-principal{
    justify-content:space-between;
 }
 
-#bloco-principal-intervalo{
-   background-color: #00AFB9;
-}
 
 #conteudo{
    display: flex;
@@ -132,6 +129,7 @@ nav#menu-principal{
 }
 
 #botao-avancar, #botao-zerar{
+   display: block;
    height: 100%;
    width: 40%;
    border: none;
