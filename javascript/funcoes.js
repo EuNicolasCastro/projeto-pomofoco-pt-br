@@ -47,7 +47,7 @@ function iniciarIntervalo(){
     clearInterval(intervalo)
     tempoPausado = true;
     checarIntervalo = true;
-    tempoEstudo = tempoIntervalo;
+    (cicloAtualdeEstudo == cicloTotaldeEstudo) ? (tempoEstudo = tempoDescansoLongo) : (tempoEstudo = tempoIntervalo);
     display.textContent = tempoEstudo+":00";
     timer = 60*tempoEstudo;
 }
@@ -121,14 +121,11 @@ function trocarTempo(){
     clearInterval(intervalo);
     
     if(!checarIntervalo){
-        tempoEstudo = tempoIntervalo;
-        checarIntervalo = true;  
-        
-
+       iniciarIntervalo(); 
     }else{
-        tempoEstudo = tempoPomodoro;
-        checarIntervalo = false;
         mudarCiclo();
+        iniciarPomodoro();
+        
     }
     timer = 60*tempoEstudo;
     tempoPausado = true;
@@ -139,9 +136,8 @@ function trocarTempo(){
 function verificarUltimoCiclo(){
 
     alert("Entrou no ciclo n°: " + cicloAtualdeEstudo);
-    if(cicloAtualdeEstudo == cicloTotaldeEstudo){
-        // Aqui fica a função para desaparecer o Botão Avançar
-        alert("Entrou no Último ciclo");
+    if(cicloAtualdeEstudo > cicloTotaldeEstudo){
+        zerarTudo();
     } 
 }
 
