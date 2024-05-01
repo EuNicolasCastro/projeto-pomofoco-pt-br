@@ -126,7 +126,7 @@ function avancarContador(){
     
     clearInterval(intervalo);
     alterarCSSCicloAtual();
-    //aparecerCSSPrincipal();
+    aparecerCSSPrincipal();
     mudarCiclo();
     
     tempoEstudo = tempoIntervaloLongo;
@@ -155,7 +155,7 @@ function alterarCSSCicloAtual(){
 }
 
 function zerarCSSCiclos(){
-
+    aparecerCSSPrincipal();
     for (let i = 1; i <= cicloTotaldeEstudo; i++) {
         botaoCiclo[i-1].removeAttribute('id');    
     }
@@ -180,5 +180,6 @@ function alterarCSSIntervalo(){
 }
 
 function aparecerCSSPrincipal(){
+    alert('Alterar fundo');
     fundoPrincipal.style.backgroundColor = "#FFE3E0";
 }
