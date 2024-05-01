@@ -129,7 +129,7 @@ function trocarTempo(){
         tempoEstudo = tempoPomodoro;
         checarIntervalo = false;
         mudarCiclo();
-        verificarUltimoCiclo();
+      //  verificarUltimoCiclo();
     }
     timer = 60*tempoEstudo;
     tempoPausado = true;
@@ -139,11 +139,11 @@ function trocarTempo(){
 
 function verificarUltimoCiclo(){
 
-    if(cicloAtualdeEstudo == cicloTotaldeEstudo){
-        tempoEstudo = tempoDescansoLongo;
-        zerarTudo();
+    // if(cicloAtualdeEstudo == cicloTotaldeEstudo-1){
+    //     tempoEstudo = tempoDescansoLongo;
+    //     zerarTudo();
         
-    }
+    // }
     
 }
 
