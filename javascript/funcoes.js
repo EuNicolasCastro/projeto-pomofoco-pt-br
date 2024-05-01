@@ -110,7 +110,7 @@ function avancarCiclo(){
 function mudarCiclo(){
 
     cicloAtualdeEstudo +=1;
-    alert(cicloAtualdeEstudo);
+    verificarUltimoCiclo();
 
 }
 
@@ -129,7 +129,6 @@ function trocarTempo(){
         tempoEstudo = tempoPomodoro;
         checarIntervalo = false;
         mudarCiclo();
-      //  verificarUltimoCiclo();
     }
     timer = 60*tempoEstudo;
     tempoPausado = true;
@@ -139,12 +138,11 @@ function trocarTempo(){
 
 function verificarUltimoCiclo(){
 
-    // if(cicloAtualdeEstudo == cicloTotaldeEstudo-1){
-    //     tempoEstudo = tempoDescansoLongo;
-    //     zerarTudo();
-        
-    // }
-    
+    alert("Entrou no ciclo n°: " + cicloAtualdeEstudo);
+    if(cicloAtualdeEstudo == cicloTotaldeEstudo){
+        // Aqui fica a função para desaparecer o Botão Avançar
+        alert("Entrou no Último ciclo");
+    } 
 }
 
 // function zerarContador(){
