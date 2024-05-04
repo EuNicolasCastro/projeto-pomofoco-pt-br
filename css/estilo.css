@@ -11,6 +11,7 @@
    --salmao-claro:#FED9B7;
    --salmao-forte:#F07167;
    --branco: #fff;
+   --fundotransparente: rgba(253, 246, 245, 0.322);   
 
 }
 
@@ -74,7 +75,7 @@ nav#menu-principal{
 #bloco-principal{
    display: flex;
    height: 90vh;
-   background-color: var(--anil);
+   background-color: var(--salmao-forte); /* Aqui é alterado o CSS do fundo */
    flex-direction: column;
    justify-content:space-between;
 }
@@ -92,7 +93,7 @@ nav#menu-principal{
 
 .pomodoro-container{
    width:30%;
-   background-color: rgba(253, 246, 245, 0.322);
+   background-color: var(--fundotransparente);
    border-radius: 30px;
    color: #f5f0ef;
    text-align: center;
@@ -117,10 +118,10 @@ nav#menu-principal{
    border-radius: 10px;
    font-size: 2em;
    text-transform: uppercase;
-   color: #F07167;
+   color: var(--salmao-forte); /* Aqui é alterado o CSS do botao iniciar */
    letter-spacing: 1px;
    font-family: 'Lexend',Arial, Helvetica, sans-serif;
-   background-color: #FFE3E0;
+   background-color: var(--branco);
    cursor: pointer;
 }
 
@@ -141,9 +142,9 @@ nav#menu-principal{
    border-radius: 7px;
    font-family: 'Lexend',Arial, Helvetica, sans-serif;
    font-size: 1em;
-   color: #F07167;
+   color: var(--salmao-forte); /* Aqui é alterado o CSS dos botoes avancar e zerar */
    text-transform: uppercase;
-   background-color: #FFE3E0;
+   background-color: var(--branco);
    cursor: pointer;
 }
 
@@ -158,7 +159,7 @@ nav#menu-principal{
 
 .ciclos p{
    margin: 0;
-   color:#F07167;
+   color: var(--branco);
    font-size: 13px;
 }
 
@@ -167,8 +168,8 @@ nav#menu-principal{
    height: 50px;
    border-style:double;
    border:none;
-   color: #F07167;
-   background-color: #fdf6f592;
+   color: var(--branco);
+   background-color: var(--fundotransparente);
    font-size: 20px;
    font-weight: bold;
    text-align: center;
@@ -176,8 +177,8 @@ nav#menu-principal{
 }
 
 #botao-ciclo-atual{
-   background-color: #F07167 !important;
-   color: #FDFCDC !important;
+   background-color: var(--branco) !important;
+   color: var(--salmao-forte) !important;
 }
 
 
@@ -192,15 +193,15 @@ nav#menu-principal{
    font-weight: 400;
 }
 #rodape p{
-   background-color: #f0706765;
+   background-color: var(--fundotransparente);
    padding: 5px 10px;
    border-radius: 15px;
-   color: white;
+   color: var(--branco);
    font-size: 10pt;
 }
 
 #rodape #icones-midias-sociais{
-   background-color: #f0706765;
+   background-color: var(--fundotransparente);
    padding: 5px 10px 1px 10px;
    border-radius: 15px;
    align-items: center;
