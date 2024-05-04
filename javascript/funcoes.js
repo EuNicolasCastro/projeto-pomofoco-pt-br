@@ -158,12 +158,10 @@ function aparecerCSSIntervalo(){
 function aparecerCSSPrincipal(){
 
     // Muda a cor do fundo e dos botoes
-    fundoPrincipal.style.backgroundColor = "var(--salmao-forte)";
     fundoPrincipal.style.backgroundColor = botaoIniciarPausar.style.color = botaoAvancar.style.color = botaoZerar.style.color = "var(--salmao-forte)";
 
     // Muda o estilo dos ciclos
     aparecerCSSCiclo();
-
 }
 
 function aparecerCSSCiclo(){
@@ -171,14 +169,13 @@ function aparecerCSSCiclo(){
         botaoCiclo[0].style.backgroundColor = "var(--branco)";
         for (let i = 1; i < cicloTotaldeEstudo; i++) {
             botaoCiclo[i].style.backgroundColor = "var(--fundotransparente)";
-            
         }
-    } else if (cicloAtualdeEstudo > cicloTotaldeEstudo){
-        alert('entrou no if')
-        botaoCiclo[cicloTotaldeEstudo].style.backgroundColor = "var(--fundotransparente)";
-    } 
-    else{
+    } else{
         botaoCiclo[cicloAtualdeEstudo-2].style.backgroundColor = "var(--fundotransparente)";
         botaoCiclo[cicloAtualdeEstudo-1]. style.backgroundColor = "var(--branco)";
     }
+}
+
+function alterarCorNumeroCiclo(){
+
 }

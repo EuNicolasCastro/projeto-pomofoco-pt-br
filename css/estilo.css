@@ -181,10 +181,6 @@ nav#menu-principal{
    transition: all .3s linear;
 }
 
-#botao-ciclo-atual{
-   background-color: var(--branco) !important;
-   color: var(--salmao-forte) !important;
-}
 
 
 /* CSS DO RODAPÉ */
