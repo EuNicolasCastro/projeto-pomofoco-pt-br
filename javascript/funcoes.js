@@ -93,7 +93,7 @@ function rodarContador(){
 // Função chamada ao apertar o Botão ZERAR
 
 function zerarTudo(){
-    //botaoCiclo[cicloTotaldeEstudo-1].removeAttribute('id', 'botao-ciclo-atual');
+    
     cicloAtualdeEstudo = 1;
     iniciarPomodoro();
 }
@@ -113,7 +113,7 @@ function mudarCiclo(){
 
     cicloAtualdeEstudo +=1;
     verificarUltimoCiclo();
-
+    
 }
 
 // Essa função troca entre o tempo do intervalo e tempo do Pomodoro
@@ -156,6 +156,29 @@ function aparecerCSSIntervalo(){
 }
 
 function aparecerCSSPrincipal(){
+
+    // Muda a cor do fundo e dos botoes
     fundoPrincipal.style.backgroundColor = "var(--salmao-forte)";
     fundoPrincipal.style.backgroundColor = botaoIniciarPausar.style.color = botaoAvancar.style.color = botaoZerar.style.color = "var(--salmao-forte)";
+
+    // Muda o estilo dos ciclos
+    aparecerCSSCiclo();
+
+}
+
+function aparecerCSSCiclo(){
+    if (cicloAtualdeEstudo == 1){
+        botaoCiclo[0].style.backgroundColor = "var(--branco)";
+        for (let i = 1; i < cicloTotaldeEstudo; i++) {
+            botaoCiclo[i].style.backgroundColor = "var(--fundotransparente)";
+            
+        }
+    } else if (cicloAtualdeEstudo > cicloTotaldeEstudo){
+        alert('entrou no if')
+        botaoCiclo[cicloTotaldeEstudo].style.backgroundColor = "var(--fundotransparente)";
+    } 
+    else{
+        botaoCiclo[cicloAtualdeEstudo-2].style.backgroundColor = "var(--fundotransparente)";
+        botaoCiclo[cicloAtualdeEstudo-1]. style.backgroundColor = "var(--branco)";
+    }
 }
