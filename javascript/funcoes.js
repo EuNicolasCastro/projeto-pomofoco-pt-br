@@ -6,7 +6,7 @@ let botaoAvancar = document.querySelector('#botao-avancar');
 let grupoBotoesAvancarZerar = document.querySelector('#botoes-avancar-zerar');
 let display = document.querySelector('#tempo');
 let botaoCiclo = document.querySelectorAll('.botao-ciclo');
-let fundoPrincipal = document.querySelector('#bloco-principal');
+let fundoPrincipal = document.querySelector('.container');
 
 
 

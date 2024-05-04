@@ -11,13 +11,10 @@
    --salmao-claro:#FED9B7;
    --salmao-forte:#F07167;
    --branco: #fff;
-   --fundotransparente: rgba(253, 246, 245, 0.322);   
+   --fundotransparente: rgba(253, 246, 245, 0.3);   
 
 }
 
-body{
-   background-color: #000;
-}
 
 .container{
 
@@ -25,6 +22,7 @@ body{
    display: flex;
    flex-direction: column;
    font-family: 'Lexend', Arial, sans-serif;
+   
 }
 
 /* CSS DO CABECALHO */
@@ -39,7 +37,7 @@ body{
    background-color: var(--fundotransparente);
    opacity: 80%;
    font-weight: 800;
-   font-size: 20pt;
+   font-size: 2.5rem;
 }
 #cabecalho .titulo{
    text-decoration: none;
@@ -59,7 +57,8 @@ nav#menu-principal{
    height: 100%;
    background: transparent;
    font-family: 'Lexend', Arial, sans-serif;
-   color: var(--amarelo-claro);
+   font-size: 1rem;
+   color: var(--branco);
    text-transform: uppercase;
    letter-spacing: 1px;
    border: none;
@@ -72,7 +71,7 @@ nav#menu-principal{
 
 .botao-menu-principal:hover{
    color: #F07167;
-   background: #FDFCDC;
+   background: var(--amarelo-claro);
 }
 
 /* CSS DO MAIN BLOCO PRINCIPAL - ONDE SERÁ EXIBIDO O CONTEUDO */
@@ -99,7 +98,7 @@ nav#menu-principal{
    width:30%;
    background-color: var(--fundotransparente);
    border-radius: 30px;
-   color: #f5f0ef;
+   color: var(--branco);
    text-align: center;
    display: flex;
    flex-direction: column;
