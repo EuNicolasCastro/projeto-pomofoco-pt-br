@@ -15,6 +15,10 @@
 
 }
 
+body{
+   background-color: #000;
+}
+
 .container{
 
    margin: 0;
@@ -32,7 +36,7 @@
    height: 10vh;
    align-items: center;
    justify-content: space-between;
-   background-color: var(--salmao-forte);
+   background-color: var(--fundotransparente);
    opacity: 80%;
    font-weight: 800;
    font-size: 20pt;
@@ -75,9 +79,9 @@ nav#menu-principal{
 #bloco-principal{
    display: flex;
    height: 90vh;
-   background-color: var(--salmao-forte); /* Aqui é alterado o CSS do fundo */
    flex-direction: column;
    justify-content:space-between;
+   transition: all .3s linear;
 }
 
 
@@ -112,6 +116,7 @@ nav#menu-principal{
    margin: 50px 0px;
 }
 
+
 #botao-iniciar-pausar{
    height: 30%;
    border: none;
@@ -132,6 +137,7 @@ nav#menu-principal{
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
+   
 }
 
 #botao-avancar, #botao-zerar{
