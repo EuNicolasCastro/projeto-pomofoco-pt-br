@@ -9,11 +9,15 @@ let botaoCiclo = document.querySelectorAll('.botao-ciclo');
 let fundoPrincipal = document.querySelector('.container');
 let aparecerHtmlCiclos = document.querySelector('.ciclos');
 
-// Capturar elementos do SAIBA MAIS
+// Capturar elementos do SAIBA MAIS e PPERSONALIZAR TEMPO
 
 let botaoSaibaMais = document.querySelector('#botao-saiba-mais');
 let caixaSaibaMais = document.querySelector('#saiba-mais');
 let botaoSairSaibaMais = document.querySelector('#sair-saiba-mais');
+
+let botaoPersonalizarTempo = document.querySelector('#botao-personalizar-tempo');
+let caixaPersonalizarTempo = document.querySelector('#personalizar-tempo');
+let botaoSairPersonalizarTempo = document.querySelector('#sair-personalizar-tempo');
 
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervalo,tempoPomodoro, tempoDescansoLongo;
@@ -26,8 +30,10 @@ botaoZerar.addEventListener('click', zerarTudo);
 botaoAvancar.addEventListener('click', avancarCiclo);
 
 botaoSaibaMais.addEventListener('click', aparecerSaibaMais);
-botaoSairSaibaMais.addEventListener('click', fecharSaibaMais)
+botaoSairSaibaMais.addEventListener('click', fecharSaibaMais);
 
+botaoPersonalizarTempo.addEventListener('click',aparecerPersonalizarTempo);
+botaoSairPersonalizarTempo.addEventListener('click', fecharPersonalizarTempo);
 // SETANDO O TEMPO
 tempoIntervalo = 3;
 tempoPomodoro = 5;
@@ -206,4 +212,12 @@ function aparecerSaibaMais(){
 
 function fecharSaibaMais(){
     caixaSaibaMais.style.display = 'none';
+}
+
+function aparecerPersonalizarTempo(){
+    caixaPersonalizarTempo.style.display ='flex';
+}
+
+function fecharPersonalizarTempo(){
+    caixaPersonalizarTempo.style.display = 'none';
 }

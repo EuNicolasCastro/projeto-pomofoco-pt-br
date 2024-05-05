@@ -15,14 +15,14 @@
             <nav id="menu-principal">
                 <h1>Menu Principal</h1>
                 <button class="botao-menu-principal" id="botao-saiba-mais">Saiba mais</button>
-                <button class="botao-menu-principal">Personalizar o Tempo</button>
+                <button class="botao-menu-principal" id="botao-personalizar-tempo">Personalizar o Tempo</button>
             </nav>
         </header>
         <main id="bloco-principal">
         
             <div id="conteudo">
                 <section class="pomodoro-container">
-                    <input type="texta" name="nome-da-tarefa" id="nome-da-tarefa" placeholder="Nome da tarefa" maxlength="50">
+                    <input type="texta" name="nome-da-tarefa" id="nome-da-tarefa" placeholder="Nome da tarefa" maxlength="40">
                     <!-- <textarea name="nome-da-tarefa" id="nome-da-tarefa" cols="30" rows="3" maxlength="70" placeholder="Nome da Tarefa"></textarea> -->
                     <h2 id="tempo"></h2>
                     <button id="botao-iniciar-pausar">Iniciar/pausar</button>
@@ -54,6 +54,9 @@
                             <li>Depois do quarto ciclo, fazer uma pausa mais longa (20-30 minutos), zerando a contagem de marcações e retornando ao passo 1</li>
                           </ol>
                   </article>
+            </div>
+            <div id="personalizar-tempo">
+                <input type="button" value="X" id="sair-personalizar-tempo">
             </div>
             <footer id="rodape">
                 <p>© 2024 - Desenvolvido por Nícolas Castro </p>

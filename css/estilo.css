@@ -244,7 +244,7 @@ nav#menu-principal{
 
 /* CSS da Div SAIBA MAIS */
 
-#saiba-mais{
+#saiba-mais, #personalizar-tempo{
    display: none;
    position: absolute;
    height: 460px;
@@ -260,7 +260,7 @@ nav#menu-principal{
    justify-content: flex-end;
 }
 
-#saiba-mais input{
+#saiba-mais input, #personalizar-tempo input{
    height: 20px;
    font-size: 20px;
    background-color: transparent;
@@ -273,3 +273,7 @@ nav#menu-principal{
    font-size: 0.8em;
    text-align: justify;
 }
+
+
+/* CSS da Div PERSONALIZAR */
+
