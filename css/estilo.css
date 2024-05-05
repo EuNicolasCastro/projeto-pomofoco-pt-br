@@ -114,6 +114,7 @@ nav#menu-principal{
 #nome-da-tarefa{
    background-color: transparent;
    border: none;
+   font-family: 'Lexend',Arial, Helvetica, sans-serif;
    font-size: 1.3rem;
    color: var(--branco);
    margin: 0;
