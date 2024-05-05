@@ -7,7 +7,7 @@ let grupoBotoesAvancarZerar = document.querySelector('#botoes-avancar-zerar');
 let display = document.querySelector('#tempo');
 let botaoCiclo = document.querySelectorAll('.botao-ciclo');
 let fundoPrincipal = document.querySelector('.container');
-
+let aparecerHtmlCiclos = document.querySelector('.ciclos');
 
 
 let timer,duracao, minutos, segundos,intervalo;
@@ -31,7 +31,18 @@ tempoEstudo = tempoPomodoro;
 tempoPomodoro = tempoPomodoro <10 ? "0"+ tempoPomodoro : tempoPomodoro;
 tempoIntervalo = tempoIntervalo <10 ? "0"+ tempoIntervalo : tempoIntervalo;
 tempoDescansoLongo = tempoDescansoLongo <10 ? "0"+ tempoDescansoLongo : tempoDescansoLongo;
- 
+
+// Iniciando o display dos ciclos
+
+function iniciarDisplayCiclos(){ 
+    
+    // função usada para fazer aparecer os ciclos de acordo com o pedido personalizado, Default é 4
+
+    
+
+}
+
+
 //Inciando o display do contador
 
 function iniciarPomodoro(){
@@ -137,7 +148,6 @@ function trocarTempo(){
 
 function verificarUltimoCiclo(){
 
-    alert("Entrou no ciclo n°: " + cicloAtualdeEstudo);
     if(cicloAtualdeEstudo > cicloTotaldeEstudo){
         zerarTudo();
     } 
@@ -166,13 +176,13 @@ function aparecerCSSPrincipal(){
 
 function aparecerCSSCiclo(){
     if (cicloAtualdeEstudo == 1){
-        botaoCiclo[0].style.backgroundColor = "var(--branco)";
+        botaoCiclo[0].style.border = "solid 3px white";
         for (let i = 1; i < cicloTotaldeEstudo; i++) {
-            botaoCiclo[i].style.backgroundColor = "var(--fundotransparente)";
+            botaoCiclo[i].style.border = "none";
         }
     } else{
-        botaoCiclo[cicloAtualdeEstudo-2].style.backgroundColor = "var(--fundotransparente)";
-        botaoCiclo[cicloAtualdeEstudo-1]. style.backgroundColor = "var(--branco)";
+        botaoCiclo[cicloAtualdeEstudo-2].style.border = "none";
+        botaoCiclo[cicloAtualdeEstudo-1].style.border = "solid 3px white";
     }
 }
 
