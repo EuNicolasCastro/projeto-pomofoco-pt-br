@@ -9,6 +9,11 @@ let botaoCiclo = document.querySelectorAll('.botao-ciclo');
 let fundoPrincipal = document.querySelector('.container');
 let aparecerHtmlCiclos = document.querySelector('.ciclos');
 
+// Capturar elementos do SAIBA MAIS
+
+let botaoSaibaMais = document.querySelector('#botao-saiba-mais');
+let caixaSaibaMais = document.querySelector('#saiba-mais');
+let botaoSairSaibaMais = document.querySelector('#sair-saiba-mais');
 
 let timer,duracao, minutos, segundos,intervalo;
 let tempoEstudo,tempoIntervalo,tempoPomodoro, tempoDescansoLongo;
@@ -18,7 +23,10 @@ let cicloTotaldeEstudo = 4,cicloAtualdeEstudo = 1;
 
 botaoIniciarPausar.addEventListener('click', iniciarPausarContador);
 botaoZerar.addEventListener('click', zerarTudo);
-botaoAvancar.addEventListener('click', avancarCiclo)
+botaoAvancar.addEventListener('click', avancarCiclo);
+
+botaoSaibaMais.addEventListener('click', aparecerSaibaMais);
+botaoSairSaibaMais.addEventListener('click', fecharSaibaMais)
 
 // SETANDO O TEMPO
 tempoIntervalo = 3;
@@ -189,6 +197,13 @@ function aparecerCSSCiclo(){
     }
 }
 
-function alterarCorNumeroCiclo(){
 
+
+/* FUNCOES DO SAIBA MAIS */
+function aparecerSaibaMais(){
+    caixaSaibaMais.style.display = 'flex';
+}
+
+function fecharSaibaMais(){
+    caixaSaibaMais.style.display = 'none';
 }

@@ -244,7 +244,7 @@ nav#menu-principal{
 /* CSS da Div SAIBA MAIS */
 
 #saiba-mais{
-   display: flex;
+   display: none;
    position: absolute;
    height: 460px;
    width: 580px;
