@@ -34,13 +34,16 @@ tempoDescansoLongo = tempoDescansoLongo <10 ? "0"+ tempoDescansoLongo : tempoDes
 
 // Iniciando o display dos ciclos
 
-function iniciarDisplayCiclos(){ 
+// function iniciarDisplayCiclos(){ 
     
-    // função usada para fazer aparecer os ciclos de acordo com o pedido personalizado, Default é 4
-
+//     // função usada para fazer aparecer os ciclos de acordo com o pedido personalizado, Default é 4
+//     aparecerHtmlCiclos.innerHTML = "<p>CICLOS</p>";
+//     for(i=1; i <= cicloTotaldeEstudo; i++){
+//         aparecerHtmlCiclos.innerHTML = "<button class='botao-ciclo'> ${i} </button>";
+//     }
     
 
-}
+// }
 
 
 //Inciando o display do contador
