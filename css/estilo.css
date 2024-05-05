@@ -105,8 +105,11 @@ nav#menu-principal{
    padding: 30px;
 }
 
-.pomodoro-container h1{
+#nome-da-tarefa{
+   background-color: transparent;
+   border: none;
    font-size: 25px;
+   color: var(--branco);
    margin: 0;
 }
 
