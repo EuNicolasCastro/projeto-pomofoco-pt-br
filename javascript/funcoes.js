@@ -35,9 +35,9 @@ botaoSairSaibaMais.addEventListener('click', fecharSaibaMais);
 botaoPersonalizarTempo.addEventListener('click',aparecerPersonalizarTempo);
 botaoSairPersonalizarTempo.addEventListener('click', fecharPersonalizarTempo);
 // SETANDO O TEMPO
-tempoIntervalo = 3;
-tempoPomodoro = 5;
-tempoDescansoLongo = 10;
+tempoIntervalo = 5;
+tempoPomodoro = 25;
+tempoDescansoLongo = 20;
 tempoEstudo = tempoPomodoro;
 
 
