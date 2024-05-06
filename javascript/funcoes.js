@@ -97,7 +97,7 @@ function iniciarPausarContador(){
     }
     else{
     tempoPausado = false;
-    intervalo = setInterval(rodarContador,10);  // Colocando o contador rapido para testes
+    intervalo = setInterval(rodarContador,1000);  // Colocando o contador rapido para testes
     }
 
 }
